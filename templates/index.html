@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  
+</head>
+<body>
+  <div class="container">  
+    <form id="contact" action="{{ url_for('predict')}}" method="post">
+      <h3>MileStone Project 1</h3>
+      <h4>Wells Fargo</h4>
+      <fieldset>
+        <input name="Age" placeholder="Age" type="text" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+        <input name="Experience" placeholder="Experience" type="text" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input name="Income" placeholder="Income" type="text" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <input name="Family" placeholder="Number of Family Members" type="text" tabindex="4" required>
+      </fieldset>
+      <fieldset>
+        <input name="CCAvg" placeholder="CCAvg" type="text" tabindex="4" required>
+      </fieldset>
+      <br>
+      <p>
+        Type of Education:
+      </p>
+      <fieldset>
+        <input name="Education" placeholder="Education" type="radio" tabindex="4" value=1 required>
+        <label for="Undergraduate">Undergraduate</label>
+        <br>
+        <input name="Education" placeholder="Education" type="radio" tabindex="4" value=2 required>
+        <label for="Graduate">Graduate</label>
+        <br>
+        <input name="Education" placeholder="Education" type="radio" tabindex="4" value=3 required>
+        <label for="Advanced/Professional">Advanced/Professional</label>
+        <br>
+      </fieldset>
+      <fieldset>
+        <input name="Mortgage" placeholder="Mortgage" type="text" tabindex="4" required>
+      </fieldset>
+      <p>
+        Securities Account:
+      </p>
+      <fieldset>
+        <input name="Securities Account" placeholder="Securities Account" type="radio" tabindex="4" value=1 required>
+        <label for="Yes">Yes</label>
+        <br>
+        <input name="Securities Account" placeholder="Securities Account" type="radio" tabindex="4" value=0 required>
+        <label for="No">No</label>
+        <br>
+      </fieldset>
+      <p>
+        CD Account:
+      </p>
+      <fieldset>
+        <input name="CD Account" placeholder="CD Account" type="radio" tabindex="4" value=1 required>
+        <label for="Yes">Yes</label>
+        <br>
+        <input name="CD Account" placeholder="CD Account" type="radio" tabindex="4" value=0 required>
+        <label for="No">No</label>
+        <br>
+      </fieldset>
+      <p>
+        Online:
+      </p>
+      <fieldset>
+        <input name="Online" placeholder="Online" type="radio" tabindex="4" value=1 required>
+        <label for="Yes">Yes</label>
+        <br>
+        <input name="Online" placeholder="Online" type="radio" tabindex="4" value=0 required>
+        <label for="No">No</label>
+        <br>
+      </fieldset>
+      <p>
+        Credit Card:
+      </p>
+      <fieldset>
+        <input name="Credit Card" placeholder="Credit Card" type="radio" tabindex="4" value=1 required>
+        <label for="Yes">Yes</label>
+        <br>
+        <input name="Credit Card" placeholder="Credit Card" type="radio" tabindex="4" value=0 required>
+        <label for="No">No</label>
+        <br>
+      </fieldset>
+        <button type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+    </form>
+   <br>
+   <br>
+   {{prediction_text}}
+  </div>
+</body>
+</html>
